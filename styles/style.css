@@ -1,0 +1,87 @@
+:root{
+  --primary:#FFEE8C; --secondary:#A8C7FF; --accent:#F2C5BB; --button:#C9A0DC;
+  --bg:#E2E7FC; --white:#FFFFFF; --text:#000000; --badge:#8BBD78;
+  --radius:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+a{color:inherit;text-decoration:none}
+
+/* Radios ocultos que controlan el filtro (solo CSS) */
+.radio{position:absolute;opacity:0;pointer-events:none}
+
+/* ===== Header + nav (Flexbox) ===== */
+header{background:var(--white);border-bottom:3px solid var(--primary);position:sticky;top:0;z-index:10}
+.header-in{max-width:1200px;margin:auto;padding:14px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-logo{width:44px;height:44px;border-radius:50%;background:var(--badge);display:grid;place-items:center;font-size:22px}
+.brand h1{font-size:1.15rem;font-weight:700}
+.brand p{font-size:.8rem}
+.menu{display:flex;flex-wrap:wrap;gap:8px}
+.menu a{border:1.5px solid var(--secondary);background:var(--white);padding:8px 18px;border-radius:999px;font-weight:500;font-size:.9rem;transition:.15s}
+.menu a:hover{background:var(--secondary)}
+.menu a.curren{background:var(--primary);border-color:var(--text);font-weight:700}
+#inicio:checked[for="inicio"],
+#productos:checked [for="productos"],
+#pedido:checked [for="pedidos"],
+#patrones:checked[for="patrones"]{
+    background:var(--button);border-color:var(--button);font-weight:700
+}
+.menu a:focus-visible,.chip:focus-visible,.btn:focus-visible{outline:3px solid var(--primary);outline-offset:2px}
+
+/* ===== Filtros por categoría (Flexbox) ===== */
+.filters{max-width:1200px;margin:24px auto 8px;padding:0 20px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.filters > span{font-weight:600;margin-right:4px}
+.chip{border:1.5px solid var(--secondary);background:var(--white);padding:9px 18px;border-radius:999px;font-weight:500;cursor:pointer;transition:.15s}
+.chip:hover{background:var(--secondary)}
+
+#f-todos:checked ~ .filters label[for="f-todos"],
+#f-ropa:checked ~ .filters label[for="f-ropa"],
+#f-manteles:checked ~ .filters label[for="f-manteles"],
+#f-peluches:checked ~ .filters label[for="f-peluches"],
+#f-cortinas:checked ~ .filters label[for="f-cortinas"]{
+    background:var(--button);border-color:var(--button);font-weight:700
+}
+.radio:focus-visible ~ .filters{outline:none}
+
+/* Ocultar tarjetas que no pertenecen a la categoría elegida */
+#f-ropa:checked ~ main .card:not(.ropa),
+#f-manteles:checked ~ main .card:not(.manteles),
+#f-peluches:checked ~ main .card:not(.peluches),
+#f-cortinas:checked ~ main .card:not(.cortinas){display:none}
+
+/* ===== Cuadrícula de tarjetas (Grid) ===== */
+main{max-width:1200px;margin:auto;padding:16px 20px 48px}
+.grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+@media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1180px){.grid{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}}
+
+.card{background:var(--white);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--primary);box-shadow:0 4px 14px rgba(0,0,0,.06);transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(0,0,0,.12)}
+
+/* Foto dividida en dos (Grid): patrón dibujado + resultado */
+.photo{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:var(--white)}
+.half{position:relative;aspect-ratio:3/4;overflow:hidden}
+.half:nth-child(1){background:var(--primary)}
+.half:nth-child(2){background:var(--accent)}
+.half img{width:100%;height:100%;object-fit:cover;display:block}
+.half img[src=""]{visibility:hidden}
+.tag{position:absolute;left:8px;bottom:8px;background:var(--white);font-size:.7rem;font-weight:600;padding:3px 10px;border-radius:999px}
+
+.body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.body h3{font-size:1.05rem;font-weight:700}
+.cats{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.cat{font-size:.72rem;font-weight:600;padding:4px 12px;border-radius:999px;text-transform:capitalize}
+.cat.ropa{background:var(--primary)}
+.cat.manteles{background:var(--secondary)}
+.cat.peluches{background:var(--accent)}
+.cat.cortinas{background:var(--badge)}
+.btn{align-self:flex-start;background:var(--button);font-size:.85rem;font-weight:600;padding:8px 18px;border-radius:999px}
+.btn:hover{filter:brightness(.93)}
+
+footer{text-align:center;padding:24px;background:var(--white);border-top:3px solid var(--primary);font-size:.85rem}
+
+@media(max-width:560px){
+  .header-in{justify-content:center}
+  .menu{justify-content:center}
+}

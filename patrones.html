@@ -1,11 +1,281 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patrones</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patrones de Crochet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    
+
+<!-- Controles del filtro (deben ir antes del header, nav y main) -->
+<input class="radio" type="radio" name="filtro" id="f-todos" checked aria-label="Todos">
+<input class="radio" type="radio" name="filtro" id="f-ropa" aria-label="Ropa">
+<input class="radio" type="radio" name="filtro" id="f-manteles" aria-label="Manteles">
+<input class="radio" type="radio" name="filtro" id="f-peluches" aria-label="Peluches">
+<input class="radio" type="radio" name="filtro" id="f-cortinas" aria-label="Cortinas">
+
+<header>
+  <div class="header-in">
+    <div class="brand">
+      <div class="brand-logo" aria-hidden="true">🧶</div>
+      <div><h1>Patrones de Crochet</h1><p>Inspírate, elige y teje</p></div>
+    </div>
+    <!-- Cambia los href por tus páginas -->
+    <nav class="menu" aria-label="Navegación principal">
+      <a href="patrones.html" class="current" for="patrones" >Patrones</a>
+      <a href="inicio.html" class="currt" for="inicio">Inicio</a>
+      <a href="productos.html" class="current" for="productos">Productos</a>
+      <a href="pedido.html" class="current" for="pedidos">Pedidos</a>
+      
+    </nav>
+  </div>
+</header>
+
+<nav class="filters" aria-label="Filtrar por categoría">
+  <span>Categorías:</span>
+  <label class="chip" for="f-todos" tabindex="0">Todos</label>
+  <label class="chip" for="f-ropa" tabindex="0">Ropa</label>
+  <label class="chip" for="f-manteles" tabindex="0">Manteles</label>
+  <label class="chip" for="f-peluches" tabindex="0">Peluches</label>
+  <label class="chip" for="f-cortinas" tabindex="0">Cortinas</label>
+</nav>
+
+<main>
+  <!-- En cada <img> pega el link en src="" (primera: patrón dibujado, segunda: resultado).
+       Para más categorías, agrega la clase a <article> y otro <span class="cat"> -->
+  <section class="grid">
+
+    <!-- ===== ROPA ===== -->
+    <article class="card ropa">
+      <div class="photo">
+        <div class="half"><img src="" alt="Patrón dibujado de Cárdigan Granny Square"><span class="tag">Patrón</span></div>
+        <div class="half"><img src="" alt="Resultado de Cárdigan Granny Square"><span class="tag">Resultado</span></div>
+      </div>
+      <div class="body"><h3>Cárdigan Granny Square</h3>
+        <div class="cats"><span class="cat ropa">ropa</span></div>
+        <a class="btn" href="#">Ver patrón</a></div>
+    </article>
+    <article class="card ropa">
+      <div class="photo">
+        <div class="half"><img src="" alt="Patrón dibujado de Gorro Beanie Acanalado"><span class="tag">Patrón</span></div>
+        <div class="half"><img src="" alt="Resultado de Gorro Beanie Acanalado"><span class="tag">Resultado</span></div>
+      </div>
+      <div class="body"><h3>Gorro Beanie Acanalado</h3>
+        <div class="cats"><span class="cat ropa">ropa</span></div>
+        <a class="btn" href="#">Ver patrón</a></div>
+    </article>
+    <article class="card ropa">
+      <div class="photo">
+        <div class="half"><img src="" alt="Patrón dibujado de Top Crop de Verano"><span class="tag">Patrón</span></div>
+        <div class="half"><img src="" alt="Resultado de Top Crop de Verano"><span class="tag">Resultado</span></div>
+      </div>
+      <div class="body"><h3>Top Crop de Verano</h3>
+        <div class="cats"><span class="cat ropa">ropa</span></div>
+        <a class="btn" href="#">Ver patrón</a></div>
+    </article>
+    <article class="card ropa">
+      <div class="photo">
+        <div class="half"><img src="" alt="Patrón dibujado de Bufanda Punto Espiga"><span class="tag">Patrón</span></div>
+        <div class="half"><img src="" alt="Resultado de Bufanda Punto Espiga"><span class="tag">Resultado</span></div>
+      </div>
+      <div class="body"><h3>Bufanda Punto Espiga</h3>
+        <div class="cats"><span class="cat ropa">ropa</span></div>
+        <a class="btn" href="#">Ver patrón</a></div>
+    </article>
+    <article class="card ropa">
+      <div class="photo">
+        <div class="half"><img src="" alt="Patrón dibujado de Chaleco Patchwork"><span class="tag">Patrón</span></div>
+        <div class="half"><img src="" alt="Resultado de Chaleco Patchwork"><span class="tag">Resultado</span></div>
+      </div>
+      <div class="body"><h3>Chaleco Patchwork</h3>
+        <div class="cats"><span class="cat ropa">ropa</span></div>
+        <a class="btn" href="#">Ver patrón</a></div>
+    </article>
+    <article class="card ropa peluches">
+      <div class="photo">
+        <div class="half"><img src="" alt="Patrón dibujado de Pantuflas Conejito"><span class="tag">Patrón</span></div>
+        <div class="half"><img src="" alt="Resultado de Pantuflas Conejito"><span class="tag">Resultado</span></div>
+      </div>
+      <div class="body"><h3>Pantuflas Conejito</h3>
+        <div class="cats"><span class="cat ropa">ropa</span><span class="cat peluches">peluches</span></div>
+        <a class="btn" href="#">Ver patrón</a></div>
+    </article>
+
+    <!-- ===== MANTELES ===== -->
+    <article class="card manteles">
+      <div class="photo">
+        <div class="half"><img src="" alt="Patrón dibujado de Mantel Granny Redondo"><span class="tag">Patrón</span></div>
+        <div class="half"><img src="" alt="Resultado de Mantel Granny Redondo"><span class="tag">Resultado</span></div>
+      </div>
+      <div class="body"><h3>Mantel Granny Redondo</h3>
+        <div class="cats"><span class="cat manteles">manteles</span></div>
+        <a class="btn" href="#">Ver patrón</a></div>
+    </article>
+    <article class="card manteles">
+      <div class="photo">
+        <div class="half"><img src="" alt="Patrón dibujado de Camino de Mesa Floral"><span class="tag">Patrón</span></div>
+        <div class="half"><img src="" alt="Resultado de Camino de Mesa Floral"><span class="tag">Resultado</span></div>
+      </div>
+      <div class="body"><h3>Camino de Mesa Floral</h3>
+        <div class="cats"><span class="cat manteles">manteles</span></div>
+        <a class="btn" href="#">Ver patrón</a></div>
+    </article>
+    <article class="card manteles">
+      <div class="photo">
+        <div class="half"><img src="" alt="Patrón dibujado de Posavasos Girasol"><span class="tag">Patrón</span></div>
+        <div class="half"><img src="" alt="Resultado de Posavasos Girasol"><span class="tag">Resultado</span></div>
+      </div>
+      <div class="body"><h3>Posavasos Girasol</h3>
+        <div class="cats"><span class="cat manteles">manteles</span></div>
+        <a class="btn" href="#">Ver patrón</a></div>
+    </article>
+    <article class="card manteles">
+      <div class="photo">
+        <div class="half"><img src="" alt="Patrón dibujado de Individual de Ondas"><span class="tag">Patrón</span></div>
+        <div class="half"><img src="" alt="Resultado de Individual de Ondas"><span class="tag">Resultado</span></div>
+      </div>
+      <div class="body"><h3>Individual de Ondas</h3>
+        <div class="cats"><span class="cat manteles">manteles</span></div>
+        <a class="btn" href="#">Ver patrón</a></div>
+    </article>
+    <article class="card manteles cortinas">
+      <div class="photo">
+        <div class="half"><img src="" alt="Patrón dibujado de Mantel Copo de Nieve"><span class="tag">Patrón</span></div>
+        <div class="half"><img src="" alt="Resultado de Mantel Copo de Nieve"><span class="tag">Resultado</span></div>
+      </div>
+      <div class="body"><h3>Mantel Copo de Nieve</h3>
+        <div class="cats"><span class="cat manteles">manteles</span><span class="cat cortinas">cortinas</span></div>
+        <a class="btn" href="#">Ver patrón</a></div>
+    </article>
+    <article class="card manteles">
+      <div class="photo">
+        <div class="half"><img src="" alt="Patrón dibujado de Tapete de Hexágonos"><span class="tag">Patrón</span></div>
+        <div class="half"><img src="" alt="Resultado de Tapete de Hexágonos"><span class="tag">Resultado</span></div>
+      </div>
+      <div class="body"><h3>Tapete de Hexágonos</h3>
+        <div class="cats"><span class="cat manteles">manteles</span></div>
+        <a class="btn" href="#">Ver patrón</a></div>
+    </article>
+
+    <!-- ===== PELUCHES ===== -->
+    <article class="card peluches">
+      <div class="photo">
+        <div class="half"><img src="" alt="Patrón dibujado de Zorro Amigurumi"><span class="tag">Patrón</span></div>
+        <div class="half"><img src="" alt="Resultado de Zorro Amigurumi"><span class="tag">Resultado</span></div>
+      </div>
+      <div class="body"><h3>Zorro Amigurumi</h3>
+        <div class="cats"><span class="cat peluches">peluches</span></div>
+        <a class="btn" href="#">Ver patrón</a></div>
+    </article>
+    <article class="card peluches">
+      <div class="photo">
+        <div class="half"><img src="" alt="Patrón dibujado de Osito Dormilón"><span class="tag">Patrón</span></div>
+        <div class="half"><img src="" alt="Resultado de Osito Dormilón"><span class="tag">Resultado</span></div>
+      </div>
+      <div class="body"><h3>Osito Dormilón</h3>
+        <div class="cats"><span class="cat peluches">peluches</span></div>
+        <a class="btn" href="#">Ver patrón</a></div>
+    </article>
+    <article class="card peluches">
+      <div class="photo">
+        <div class="half"><img src="" alt="Patrón dibujado de Conejito Pastel"><span class="tag">Patrón</span></div>
+        <div class="half"><img src="" alt="Resultado de Conejito Pastel"><span class="tag">Resultado</span></div>
+      </div>
+      <div class="body"><h3>Conejito Pastel</h3>
+        <div class="cats"><span class="cat peluches">peluches</span></div>
+        <a class="btn" href="#">Ver patrón</a></div>
+    </article>
+    <article class="card peluches">
+      <div class="photo">
+        <div class="half"><img src="" alt="Patrón dibujado de Pulpo Emocional"><span class="tag">Patrón</span></div>
+        <div class="half"><img src="" alt="Resultado de Pulpo Emocional"><span class="tag">Resultado</span></div>
+      </div>
+      <div class="body"><h3>Pulpo Emocional</h3>
+        <div class="cats"><span class="cat peluches">peluches</span></div>
+        <a class="btn" href="#">Ver patrón</a></div>
+    </article>
+    <article class="card peluches">
+      <div class="photo">
+        <div class="half"><img src="" alt="Patrón dibujado de Gatito Bolita"><span class="tag">Patrón</span></div>
+        <div class="half"><img src="" alt="Resultado de Gatito Bolita"><span class="tag">Resultado</span></div>
+      </div>
+      <div class="body"><h3>Gatito Bolita</h3>
+        <div class="cats"><span class="cat peluches">peluches</span></div>
+        <a class="btn" href="#">Ver patrón</a></div>
+    </article>
+    <article class="card peluches ropa">
+      <div class="photo">
+        <div class="half"><img src="" alt="Patrón dibujado de Dino Bebé"><span class="tag">Patrón</span></div>
+        <div class="half"><img src="" alt="Resultado de Dino Bebé"><span class="tag">Resultado</span></div>
+      </div>
+      <div class="body"><h3>Dino Bebé</h3>
+        <div class="cats"><span class="cat peluches">peluches</span><span class="cat ropa">ropa</span></div>
+        <a class="btn" href="#">Ver patrón</a></div>
+    </article>
+
+    <!-- ===== CORTINAS ===== -->
+    <article class="card cortinas">
+      <div class="photo">
+        <div class="half"><img src="" alt="Patrón dibujado de Cortina Punto Rejilla"><span class="tag">Patrón</span></div>
+        <div class="half"><img src="" alt="Resultado de Cortina Punto Rejilla"><span class="tag">Resultado</span></div>
+      </div>
+      <div class="body"><h3>Cortina Punto Rejilla</h3>
+        <div class="cats"><span class="cat cortinas">cortinas</span></div>
+        <a class="btn" href="#">Ver patrón</a></div>
+    </article>
+    <article class="card cortinas">
+      <div class="photo">
+        <div class="half"><img src="" alt="Patrón dibujado de Cortina Boho con Cuentas"><span class="tag">Patrón</span></div>
+        <div class="half"><img src="" alt="Resultado de Cortina Boho con Cuentas"><span class="tag">Resultado</span></div>
+      </div>
+      <div class="body"><h3>Cortina Boho con Cuentas</h3>
+        <div class="cats"><span class="cat cortinas">cortinas</span></div>
+        <a class="btn" href="#">Ver patrón</a></div>
+    </article>
+    <article class="card cortinas manteles">
+      <div class="photo">
+        <div class="half"><img src="" alt="Patrón dibujado de Panel Flores Calado"><span class="tag">Patrón</span></div>
+        <div class="half"><img src="" alt="Resultado de Panel Flores Calado"><span class="tag">Resultado</span></div>
+      </div>
+      <div class="body"><h3>Panel Flores Calado</h3>
+        <div class="cats"><span class="cat cortinas">cortinas</span><span class="cat manteles">manteles</span></div>
+        <a class="btn" href="#">Ver patrón</a></div>
+    </article>
+    <article class="card cortinas">
+      <div class="photo">
+        <div class="half"><img src="" alt="Patrón dibujado de Cortina Café Corta"><span class="tag">Patrón</span></div>
+        <div class="half"><img src="" alt="Resultado de Cortina Café Corta"><span class="tag">Resultado</span></div>
+      </div>
+      <div class="body"><h3>Cortina Café Corta</h3>
+        <div class="cats"><span class="cat cortinas">cortinas</span></div>
+        <a class="btn" href="#">Ver patrón</a></div>
+    </article>
+    <article class="card cortinas">
+      <div class="photo">
+        <div class="half"><img src="" alt="Patrón dibujado de Cortina de Abanicos"><span class="tag">Patrón</span></div>
+        <div class="half"><img src="" alt="Resultado de Cortina de Abanicos"><span class="tag">Resultado</span></div>
+      </div>
+      <div class="body"><h3>Cortina de Abanicos</h3>
+        <div class="cats"><span class="cat cortinas">cortinas</span></div>
+        <a class="btn" href="#">Ver patrón</a></div>
+    </article>
+    <article class="card cortinas">
+      <div class="photo">
+        <div class="half"><img src="" alt="Patrón dibujado de Visillo Ondulado"><span class="tag">Patrón</span></div>
+        <div class="half"><img src="" alt="Resultado de Visillo Ondulado"><span class="tag">Resultado</span></div>
+      </div>
+      <div class="body"><h3>Visillo Ondulado</h3>
+        <div class="cats"><span class="cat cortinas">cortinas</span></div>
+        <a class="btn" href="#">Ver patrón</a></div>
+    </article>
+
+  </section>
+</main>
+
+<footer>Hecho con 🧶 y mucho amor · Patrones de crochet</footer>
+
 </body>
 </html>
