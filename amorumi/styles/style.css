@@ -185,3 +185,32 @@ main.pedidos{max-width:860px;margin:auto;padding:28px 20px 48px}
 .gallery figure:nth-child(4) img{background:var(--bg)}
 .gallery img{width:100%;aspect-ratio:1/1;object-fit:contain;padding:14px;display:block}
 .gallery figcaption{padding:12px 16px 16px;font-weight:600;font-size:.9rem;text-align:center}
+
+
+/* Productos */
+#f-hogar:checked ~ .filters label[for="f-hogar"],
+#f-accesorios:checked ~ .filters label[for="f-accesorios"]{
+    background:var(--button);border-color:var(--button);font-weight:700
+}
+
+#f-hogar:checked ~ main .card:not(.hogar),
+#f-accesorios:checked ~ main .card:not(.accesorios){display:none}
+
+.cat.hogar{background:var(--secondary);text-transform:lowercase}
+.cat.hogar::first-letter{text-transform:uppercase}
+.cat.accesorios{background:var(--button)}
+.page-title{margin:8px 0 22px}
+.page-title h2{font-size:1.6rem;margin-bottom:4px}
+
+.pic{position:relative;aspect-ratio:1/1;background:var(--bg)}
+.pic img{position:absolute;inset:14px;width:calc(100% - 28px);height:calc(100% - 28px);object-fit:contain;display:block}
+.card.ropa .pic{background:var(--primary)}
+.card.peluches .pic{background:var(--accent)}
+.card.hogar .pic{background:var(--secondary)}
+.card.accesorios .pic{background:var(--bg)}
+
+.body .price{align-self:flex-start;background:var(--bg);font-size:.8rem;font-weight:600;padding:4px 14px;border-radius:999px}
+.body p{font-size:.92rem}
+
+@media(min-width:900px){.grid.catalogo{grid-template-columns:repeat(3,1fr)}}
+
