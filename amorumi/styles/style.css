@@ -21,13 +21,8 @@ header{background:var(--white);border-bottom:3px solid var(--primary);position:s
 .menu a{border:1.5px solid var(--secondary);background:var(--white);padding:8px 18px;border-radius:999px;font-weight:500;font-size:.9rem;transition:.15s}
 .menu a:hover{background:var(--secondary)}
 .menu a.curren{background:var(--primary);border-color:var(--text);font-weight:700}
-#inicio:checked[for="inicio"],
-#productos:checked [for="productos"],
-#pedido:checked [for="pedidos"],
-#patrones:checked[for="patrones"]{
-    background:var(--button);border-color:var(--button);font-weight:700
-}
 .menu a:focus-visible,.chip:focus-visible,.btn:focus-visible{outline:3px solid var(--primary);outline-offset:2px}
+footer{text-align:center;padding:24px;background:var(--white);border-top:3px solid var(--primary);font-size:.85rem}
 
 /* ===== Filtros por categoría (Flexbox) ===== */
 .filters{max-width:1200px;margin:24px auto 8px;padding:0 20px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
@@ -85,3 +80,83 @@ footer{text-align:center;padding:24px;background:var(--white);border-top:3px sol
   .header-in{justify-content:center}
   .menu{justify-content:center}
 }
+
+/*===Pedidos ===*/
+
+/* ===================================================
+   PEDIDOS  (todo va acotado a main.pedidos para no
+   afectar a patrones, productos ni inicio)
+   =================================================== */
+
+main.pedidos{max-width:860px;margin:auto;padding:28px 20px 48px}
+.pedidos > h2{font-size:1.6rem;margin-bottom:4px}
+.pedidos .intro{margin-bottom:20px}
+.pedidos fieldset{border:1px solid var(--primary);background:var(--white);border-radius:var(--radius);padding:20px 22px;margin-bottom:18px;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+.pedidos legend{background:var(--primary);font-weight:700;font-size:.95rem;padding:3px 16px;border-radius:999px}
+.pedidos .campos{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.pedidos .campo{display:flex;flex-direction:column;gap:4px;font-size:.9rem;font-weight:600}
+.pedidos input[type=text],.pedidos input[type=tel],.pedidos input[type=number],.pedidos select{font:inherit;font-weight:400;padding:10px 14px;border:1.5px solid var(--secondary);border-radius:12px;background:var(--white)}
+.pedidos input:focus-visible,.pedidos select:focus-visible,.pedidos .chip:has(:focus-visible),.pedidos .prod:has(:focus-visible),.pedidos button:focus-visible{outline:3px solid var(--button);outline-offset:2px}
+ 
+/* Chips (categoría y talla de peluche) */
+.pedidos .chips{display:flex;flex-wrap:wrap;gap:10px}
+.pedidos .chip{position:relative;border:1.5px solid var(--secondary);background:var(--white);padding:9px 18px;border-radius:999px;font-weight:500;cursor:pointer;transition:.15s}
+.pedidos .chip:hover{background:var(--secondary)}
+.pedidos .chip:has(:checked){background:var(--button);border-color:var(--button);font-weight:700}
+ 
+/* Bloques que dependen de la categoría: ocultos por defecto */
+.pedidos .b-ropa,.pedidos .b-acc,.pedidos .b-hogar,.pedidos .b-pel,
+.pedidos .dir,.pedidos .t-ropa,.pedidos .t-acc,.pedidos .t-hogar,.pedidos .t-pel,
+.pedidos .upload,.pedidos .cambiar{display:none}
+.pedidos:has(#c-ropa:checked) .b-ropa,
+.pedidos:has(#c-acc:checked) .b-acc,
+.pedidos:has(#c-hogar:checked) .b-hogar,
+.pedidos:has(#c-pel:checked) .b-pel,
+.pedidos:has(#c-ropa:checked) .t-ropa,
+.pedidos:has(#c-acc:checked) .t-acc,
+.pedidos:has(#c-hogar:checked) .t-hogar,
+.pedidos:has(#c-pel:checked) .t-pel{display:block}
+.pedidos:has(#envio:checked) .dir{display:flex}
+ 
+/* ===== Catálogo del formulario: la imagen es el botón ===== */
+/* (usa .cat-grid y NO .grid, para no chocar con el catálogo de patrones) */
+.pedidos .cat-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.pedidos .prod{position:relative;background:var(--white);border:2px solid var(--primary);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s}
+.pedidos .prod:hover{transform:translateY(-3px)}
+.pedidos .prod > label{cursor:pointer;display:flex;flex-direction:column;flex:1}
+.pedidos .ph{aspect-ratio:3/4;background:var(--accent);display:grid;place-items:center;font-size:2.4rem;overflow:hidden}
+.pedidos .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.pedidos .ph img[src=""]{visibility:hidden}
+.pedidos .nm{padding:12px 14px;font-weight:700}
+.pedidos .pers .ph{background:var(--secondary)}
+/* al elegir uno, los demás desaparecen */
+.pedidos .cat-grid:has(.radio:checked) .prod:not(:has(.radio:checked)){display:none}
+.pedidos .prod:has(.radio:checked){border-color:var(--button);border-width:3px}
+.pedidos .cat-grid:has(.radio:checked){grid-template-columns:minmax(200px,280px)}
+.pedidos .cat-b:has(.radio:checked) .cambiar{display:inline-block}
+.pedidos .cambiar{margin-top:14px;background:var(--white);border:1.5px solid var(--button);padding:8px 18px;border-radius:999px;font-weight:600;font-size:.85rem;cursor:pointer}
+.pedidos .cambiar:hover{background:var(--button)}
+.pedidos .pers:has(.radio:checked) .upload{display:block;padding:0 14px 14px}
+.pedidos .upload input{width:100%;font-size:.8rem}
+ 
+/* ===== Entrega, total y botón ===== */
+.pedidos .envio{display:flex;align-items:center;gap:10px;font-weight:600;cursor:pointer}
+.pedidos .envio input{width:20px;height:20px;accent-color:var(--button)}
+.pedidos .dir{flex-direction:column;gap:4px;margin-top:14px;font-size:.9rem;font-weight:600}
+.pedidos .total{text-align:center;padding:10px 0 4px}
+.pedidos .total p{font-size:2.4rem;font-weight:800}
+.pedidos .total span{background:var(--primary);padding:2px 18px;border-radius:999px}
+.pedidos .enviar{display:block;margin:12px auto 0;background:var(--button);border:0;font:inherit;font-size:1.05rem;font-weight:700;padding:14px 34px;border-radius:999px;cursor:pointer}
+.pedidos .enviar:hover{filter:brightness(.93)}
+ 
+/* ===== Pedido finalizado (solo con :target) ===== */
+.ok{display:none;position:fixed;inset:0;z-index:20;background:rgba(226,231,252,.96);place-items:center;text-align:center}
+.ok:target{display:grid}
+.ok > div{background:var(--white);border:3px solid var(--primary);border-radius:var(--radius);padding:36px 40px;max-width:360px;margin:20px}
+.ok .check{width:88px;height:88px;margin:0 auto 14px;border-radius:50%;background:var(--badge);color:var(--white);font-size:3rem;font-weight:700;display:grid;place-items:center;padding:0}
+.ok h3{font-size:1.5rem;margin-bottom:16px}
+.ok a{display:inline-block;background:var(--button);font-weight:600;padding:8px 22px;border-radius:999px}
+@media(prefers-reduced-motion:reduce){.pedidos *{transition:none!important}}
+ 
+@media(max-width:560px){.header-in,.menu{justify-content:center}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
