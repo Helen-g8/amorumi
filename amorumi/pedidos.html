@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pedidos</title>
+<link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+<header>
+  <div class="header-in">
+    <div class="brand">
+      <div class="brand-logo">🧶</div>
+      <div><h1>Amorumi</h1><p>Inspírate, elige y teje</p></div>
+    </div>
+    <nav class="menu">
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="patrones.html">Patrones</a>
+      <a class="curren" href="pedidos.html">Pedidos</a>
+    </nav>
+  </div>
+</header>
+ 
+<main class="pedidos">
+  <h2>Haz tu pedido</h2>
+  <p class="intro">Completa tus datos, elige una categoría y selecciona tu producto.</p>
+ 
+  <form action="#pedido-finalizado" method="get">
+    <!-- Opción oculta que permite "Cambiar selección" -->
+    <input class="radio" type="radio" name="producto" id="p-none" value="" checked>
+ 
+    <fieldset>
+      <legend>Tus datos</legend>
+      <div class="campos">
+        <label class="campo">Nombre<input type="text" name="nombre" required autocomplete="given-name"></label>
+        <label class="campo">Apellidos<input type="text" name="apellidos" required autocomplete="family-name"></label>
+        <label class="campo">Teléfono<input type="tel" name="telefono" required autocomplete="tel"></label>
+      </div>
+    </fieldset>
+ 
+    <fieldset>
+      <legend>¿Qué quieres pedir?</legend>
+      <div class="chips">
+        <label class="chip"><input class="radio" type="radio" name="categoria" id="c-ropa" value="ropa" required>Ropa</label>
+        <label class="chip"><input class="radio" type="radio" name="categoria" id="c-acc" value="accesorios">Accesorios</label>
+        <label class="chip"><input class="radio" type="radio" name="categoria" id="c-hogar" value="hogar">Para el hogar</label>
+        <label class="chip"><input class="radio" type="radio" name="categoria" id="c-pel" value="peluches">Peluches</label>
+      </div>
+    </fieldset>
+ 
+    <!-- ROPA -->
+    <fieldset class="b-ropa">
+      <legend>Tus medidas (cm)</legend>
+      <div class="campos">
+        <label class="campo">Pecho<input type="number" name="pecho" min="1" step="0.5" placeholder="cm"></label>
+        <label class="campo">Cintura<input type="number" name="cintura" min="1" step="0.5" placeholder="cm"></label>
+        <label class="campo">Cadera<input type="number" name="cadera" min="1" step="0.5" placeholder="cm"></label>
+        <label class="campo">Tiro (hombro a cadera)<input type="number" name="tiro" min="1" step="0.5" placeholder="cm"></label>
+      </div>
+    </fieldset>
+    <fieldset class="b-ropa cat-b">
+      <legend>Catálogo de ropa</legend>
+      <div class="cat-grid">
+        <div class="prod"><label><input class="radio" type="radio" name="producto" value="ropa-1"><div class="ph"><img src="" alt="Ropa 1"></div><span class="nm">Producto 1</span></label></div>
+        <div class="prod"><label><input class="radio" type="radio" name="producto" value="ropa-2"><div class="ph"><img src="" alt="Ropa 2"></div><span class="nm">Producto 2</span></label></div>
+        <div class="prod"><label><input class="radio" type="radio" name="producto" value="ropa-3"><div class="ph"><img src="" alt="Ropa 3"></div><span class="nm">Producto 3</span></label></div>
+        <div class="prod pers"><label><input class="radio" type="radio" name="producto" value="personalizado-ropa"><div class="ph">✨</div><span class="nm">Personalizar</span></label>
+          <div class="upload"><label class="campo">Sube tu foto<input type="file" name="foto_ropa" accept="image/*"></label></div></div>
+      </div>
+      <label class="cambiar" for="p-none">Cambiar selección</label>
+    </fieldset>
+ 
+    <!-- ACCESORIOS -->
+    <fieldset class="b-acc cat-b">
+      <legend>Catálogo de accesorios</legend>
+      <div class="cat-grid">
+        <div class="prod"><label><input class="radio" type="radio" name="producto" value="acc-1"><div class="ph"><img src="" alt="Accesorio 1"></div><span class="nm">Producto 1</span></label></div>
+        <div class="prod"><label><input class="radio" type="radio" name="producto" value="acc-2"><div class="ph"><img src="" alt="Accesorio 2"></div><span class="nm">Producto 2</span></label></div>
+        <div class="prod"><label><input class="radio" type="radio" name="producto" value="acc-3"><div class="ph"><img src="" alt="Accesorio 3"></div><span class="nm">Producto 3</span></label></div>
+        <div class="prod pers"><label><input class="radio" type="radio" name="producto" value="personalizado-acc"><div class="ph">✨</div><span class="nm">Personalizar</span></label>
+          <div class="upload"><label class="campo">Sube tu foto<input type="file" name="foto_acc" accept="image/*"></label></div></div>
+      </div>
+      <label class="cambiar" for="p-none">Cambiar selección</label>
+    </fieldset>
+ 
+    <!-- PARA EL HOGAR -->
+    <fieldset class="b-hogar cat-b">
+      <legend>Catálogo para el hogar</legend>
+      <div class="cat-grid">
+        <div class="prod"><label><input class="radio" type="radio" name="producto" value="hogar-1"><div class="ph"><img src="" alt="Hogar 1"></div><span class="nm">Producto 1</span></label></div>
+        <div class="prod"><label><input class="radio" type="radio" name="producto" value="hogar-2"><div class="ph"><img src="" alt="Hogar 2"></div><span class="nm">Producto 2</span></label></div>
+        <div class="prod"><label><input class="radio" type="radio" name="producto" value="hogar-3"><div class="ph"><img src="" alt="Hogar 3"></div><span class="nm">Producto 3</span></label></div>
+        <div class="prod pers"><label><input class="radio" type="radio" name="producto" value="personalizado-hogar"><div class="ph">✨</div><span class="nm">Personalizar</span></label>
+          <div class="upload"><label class="campo">Sube tu foto<input type="file" name="foto_hogar" accept="image/*"></label></div></div>
+      </div>
+      <label class="cambiar" for="p-none">Cambiar selección</label>
+    </fieldset>
+ 
+    <!-- PELUCHES -->
+    <fieldset class="b-pel">
+      <legend>Tamaño del peluche</legend>
+      <div class="chips">
+        <label class="chip"><input class="radio" type="radio" name="tamano" value="S">S · 10 a 12 cm</label>
+        <label class="chip"><input class="radio" type="radio" name="tamano" value="M">M · 18 a 20 cm</label>
+        <label class="chip"><input class="radio" type="radio" name="tamano" value="L">L · 25 a 30 cm</label>
+      </div>
+    </fieldset>
+    <fieldset class="b-pel cat-b">
+      <legend>Catálogo de peluches</legend>
+      <div class="cat-grid">
+        <div class="prod"><label><input class="radio" type="radio" name="producto" value="pel-1"><div class="ph"><img src="" alt="Peluche 1"></div><span class="nm">Producto 1</span></label></div>
+        <div class="prod"><label><input class="radio" type="radio" name="producto" value="pel-2"><div class="ph"><img src="" alt="Peluche 2"></div><span class="nm">Producto 2</span></label></div>
+        <div class="prod"><label><input class="radio" type="radio" name="producto" value="pel-3"><div class="ph"><img src="" alt="Peluche 3"></div><span class="nm">Producto 3</span></label></div>
+        <div class="prod pers"><label><input class="radio" type="radio" name="producto" value="personalizado-pel"><div class="ph">✨</div><span class="nm">Personalizar</span></label>
+          <div class="upload"><label class="campo">Sube tu foto<input type="file" name="foto_pel" accept="image/*"></label></div></div>
+      </div>
+      <label class="cambiar" for="p-none">Cambiar selección</label>
+    </fieldset>
+ 
+    <!-- ANTICIPO Y ENVÍO -->
+    <fieldset>
+      <legend>Anticipo</legend>
+      <label class="campo">Elige tu anticipo
+        <select name="anticipo" required>
+          <option value="" selected disabled>Selecciona una opción</option>
+          <option value="10">$10</option>
+          <option value="15">$15</option>
+          <option value="20">$20</option>
+        </select>
+      </label>
+    </fieldset>
+ 
+    <fieldset>
+      <legend>Entrega</legend>
+      <label class="envio"><input type="checkbox" name="envio" id="envio" value="si">¿Con envío?</label>
+      <label class="campo dir">Dirección de entrega<input type="text" name="direccion" placeholder="Calle, número, colonia, ciudad"></label>
+    </fieldset>
+ 
+    <!-- TOTAL (cambia según la categoría) -->
+    <div class="total">
+      <div class="t-ropa"><p>Total: <span>$50</span></p></div>
+      <div class="t-acc"><p>Total: <span>$25</span></p></div>
+      <div class="t-hogar"><p>Total: <span>$20</span></p></div>
+      <div class="t-pel"><p>Total: <span>$20</span></p></div>
+    </div>
+    <button class="enviar" type="submit">Finalizar pedido</button>
+  </form>
+</main>
+ 
+<div class="ok" id="pedido-finalizado">
+  <div>
+    <div class="check">✓</div>
+    <h3>Pedido finalizado</h3>
+    <a href="pedidos.html">Hacer otro pedido</a>
+  </div>
+</div>
+ 
+<footer>© Amorumi · Tejidos hechos con cariño</footer>
+</body>
+</html>
