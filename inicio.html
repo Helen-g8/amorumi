@@ -4,8 +4,145 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+    <header>
+        <div class="header-in">
+            <a class="brand" href="inicio.html" aria-label="Amorumi, ir al inicio">
+                <div class="brand-logo big"><img src="" alt="Logo de Amorumi"></div>
+                <div><h1>Amorumi</h1><p>Tejidos con amor</p></div>
+            </a>
+            <nav class="menu" aria-label="Navegación principal">
+                <a href="inicio.html" class="current" aria-current="page">Inicio</a>
+                <a href="productos.html">Productos</a>
+                <a href="pedido.html">Pedidos</a>
+                <a href="patrones.html">Patrones</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" aria-labelledby="titulo-hero">
+            <div class="hero-text">
+                <span class="eyebrow">Crochet hecho a mano</span>
+                <h2 id="titulo-hero">Tejidos con amor, para usted o para regalar</h2>
+                <p>Peluches, ropa y accesorios tejidos a mano. Puede llevarse una pieza ya lista o encargarnos una a su gusto: con su idea, sus colores y su medida.</p>
+                <div class="hero-actions">
+                    <a class="btn" href="pedido.html">Hacer un pedido</a>
+                    <a class="btn alt" href="productos.html">Ver productos</a>
+                </div>
+            </div>
+            <div class="hero-img">
+                <img src="" alt="Medusa tejida a crochet en tonos azules y blanco, para colgar">
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="titulo-hacemos">
+            <h2 id="titulo-hacemos">Lo que tejemos</h2>
+            <p class="lead">Trabajamos con lana y, en las prendas de vestir, con algodón. Todos nuestros productos son lavables.</p>
+            <div class="info-grid">
+                <article class="info">
+                    <div class="thumb">
+                        <img src="" alt="Cárdigan calado tejido a crochet en color frambuesa" loading="lazy">
+                    </div>
+                    <h3>Ropa</h3>
+                    <p>Suéteres, gorros, camisas, faldas, pantalones, zapatos, bikinis y vestidos: casi cualquier prenda se puede tejer.</p>
+                    <span class="price">De $20 a $50</span>
+                </article>
+                <article class="info">
+                    <div class="thumb"><img src="" alt="Peluche de oso panda" loading="lazy"></div>
+                    <h3>Peluches</h3>
+                    <p>Amigurumis y flores tejidas, ideales para regalar a alguien especial.</p>
+                    <span class="price">De $5 a $20</span>
+                </article>
+                <article class="info">
+                    <div class="thumb"><img src="" alt="Posavasos de tortuga" loading="lazy"></div>
+                    <h3>Para el hogar</h3>
+                    <p>Manteles, caminos de mesa, posavasos y cortinas que dan un toque artesanal a cada espacio.</p>
+                    <span class="price">Consulte su precio</span>
+                </article>
+                <article class="info">
+                    <div class="thumb"><img src="" alt="Dos llaveros de hongo" loading="lazy"></div>
+                    <h3>Accesorios</h3>
+                    <p>Llaveros y otros detalles tejidos para completar su look o para obsequiar.</p>
+                    <span class="price">Consulte su precio</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="titulo-galeria">
+            <h2 id="titulo-galeria">Algunas de nuestras piezas</h2>
+            <p class="lead">Cada una se teje a mano, puntada a puntada.</p>
+            <div class="gallery">
+                <figure><img src="" alt="Hello Kitty enfermera con un ramo de tulipanes azules" loading="lazy"><figcaption>Hello Kitty enfermera y tulipanes</figcaption></figure>
+                <figure><img src="" alt="Peluche de " loading="lazy"><figcaption>morada</figcaption></figure>
+                <figure><img src="" alt="Peluche " loading="lazy"><figcaption></figcaption></figure>
+                <figure><img src="" alt="Bolsita" loading="lazy"><figcaption>Bolsita</figcaption></figure>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="titulo-quienes">
+            <h2 id="titulo-quienes">Quiénes somos</h2>
+            <p class="lead">Un proyecto nacido del cariño por el tejido.</p>
+            <div class="about">
+                <article class="info">
+                    <h3>Nuestra historia</h3>
+                    <p>A los 10 años, nuestra fundadora aprendió a tejer crochet de la mano de su abuela, y desde entonces el amor por el tejido nunca se fue. Amorumi nació después, como un proyecto lleno de ilusión para compartir peluches y prendas tejidas a mano.</p>
+                </article>
+                <article class="info">
+                    <h3>Nuestro nombre</h3>
+                    <p>Amorumi une dos palabras: <em>amigurumi</em>, el nombre japonés de los peluches tejidos a crochet, y <em>amor</em>. Es lo que ponemos en cada puntada.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="titulo-destacado">
+            <article class="featured">
+                <div class="photo">
+                    <div class="half"><img src="" alt="Patrón"><span class="tag">Patrón</span></div>
+                    <div class="half"><img src="" alt="Sueter"><span class="tag">Resultado</span></div>
+                </div>
+                <div class="featured-text">
+                    <span class="eyebrow">Pedidos personalizados</span>
+                    <h2 id="titulo-destacado">Una pieza hecha a su medida</h2>
+                    <p>¿Tiene una idea o una foto de referencia? Podemos tejerla con los cambios que usted prefiera. También puede explorar nuestros patrones, que muestran el dibujo de cada diseño junto a su resultado terminado, como este Cárdigan Granny Square.</p>
+                    <a class="btn" href="patrones.html">Ver patrones</a>
+                </div>
+            </article>
+        </section>
+
+        <section class="section" aria-labelledby="titulo-pasos">
+            <h2 id="titulo-pasos">¿Cómo hacer su pedido?</h2>
+            <p class="lead">Contamos con productos listos para la venta y con piezas personalizadas por encargo.</p>
+            <ol class="steps">
+                <li><strong>Envíenos su idea</strong>Puede mandarnos una foto de referencia y decirnos qué detalles desea cambiar. Le indicaremos el tamaño aproximado.</li>
+                <li><strong>Indíquenos sus medidas</strong>Si es ropa, necesitamos las medidas exactas de su cuerpo para que le quede perfecta.</li>
+                <li><strong>Realice un anticipo</strong>Con él damos inicio a su pedido personalizado.</li>
+                <li><strong>Reciba su pieza</strong>Realizamos envíos a la zona central del país. Para zonas más lejanas, el envío se coordina aparte y su costo depende del lugar.</li>
+            </ol>
+        </section>
+
+        <section class="cta" aria-labelledby="titulo-cta">
+            <h2 id="titulo-cta">¿Tiene una idea en mente?</h2>
+            <p>Cuéntenosla y la tejemos con mucho amor.</p>
+            <a class="btn" href="pedido.html">Hacer mi pedido</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-in">
+            <p>Tejidos con amor · Amorumi</p>
+            <ul class="contact" aria-label="Contacto">
+                <li>Instagram: <a href="https://www.instagram.com/amorumi.sv" target="_blank" rel="noopener">@amorumi.sv</a></li>
+                <li>Correo: <a href="mailto:amorumi.sv@gmail.com">amorumi.sv@gmail.com</a></li>
+                <li>Teléfono: <a href="tel:+50312345678">1234 5678</a></li>
+            </ul>
+        </div>
+    </footer>
     
 </body>
 </html>
